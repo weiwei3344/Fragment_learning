@@ -68,3 +68,44 @@
 
 ![基本结构标签](C:\Users\weiwei\AppData\Roaming\Typora\typora-user-images\image-20211130211638253.png)
 
+## 3、网页开发工具
+
+### 3.1 文档类型声明标签
+
+​	`<!DOCTYPE html>`文档类型声明，**作用**：告诉浏览器使用哪种HTML版本来显示网页
+
+```html
+<!DOCTYPE html>
+```
+
+​	这句代码的意思是:**当前页面采用的是HTML5版本来显示网页**
+
+**注意**：
+
+1. `<!DOCTYPE>`声明位于文档中的最前面的位置，处于`<html>`标签之前
+
+2. `<!DOCTYPE>`不是一个HTML标签，他就是文档类型的声明标签
+
+### 3.2 lang语言种类
+
+​	用来定义当前文档显示的语言
+
+1. en定义语言为英语
+
+2. zh-CN定义语言为中文
+
+​	简单来说，定义为en就是英文网页，定义zh-CN就是中文网页
+
+​	其实对于文档显示来说，定义成en的文档也可以显示中文，定义zh-CN的文档也可以显示英文，这个属性对于浏览器和搜索引擎还是很有作用的
+
+### 3.3 字符集
+
+​	字符集（Character set）是多个字符的集合。以便计算机能够识别和存储各种文字。
+
+​	在`<head>`标签内，可以通过`<meta>`标签的<span style="color:red">charset</span>属性来规定HTML文档应该使用哪种字符编码
+
+<meta charset="UTF-8">
+
+​	charset常用的值有： GB2312、BIG5、GBK和UTF-8，其中<span style="color:red">UTF-8</span>也被称为万国码，基本包含了全世界所有国家需要用到的字符。
+
+​	**<span style="color:red">注意</span>**：上面语法是必须要写的代码，否则可能会引起乱码的情况。一般情况下，统一使用“UTF-8”编码，尽量写成标准的“UTF-8”，不要写成“utf8”或者“UTF8”
