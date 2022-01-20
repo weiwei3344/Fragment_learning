@@ -646,3 +646,6 @@
   | value     | 由用户自定义 | 定义input元素的值                     |
   | checked   | checked      | 规定此input元素首次加载时候应该被选中 |
   | maxlength | 正整数       | 规定输入字段中字符的最大长度          |
+
+### 8.3
+
