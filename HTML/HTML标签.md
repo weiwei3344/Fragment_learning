@@ -647,5 +647,114 @@
   | checked   | checked      | 规定此input元素首次加载时候应该被选中 |
   | maxlength | 正整数       | 规定输入字段中字符的最大长度          |
 
-### 8.3
+- 有些表单元素想刚打开页面就默认显示几个文字，可以给表单元素设置value属性=“值”。语法格式如下
 
+  ```html
+  用户名：<input type="text" value="请输入用户名">
+  ```
+
+- 页面中表单元素很多，如何区分不同的表单元素。可以使用name属性，当前input表单的名字，后台可以通过这个name属性找到这个表单，页面中的表单很多，name的主要作用就是用于区别不同的表单，语法格式
+
+  ```html
+  用户名：<input type="text" value="请输入用户名" name="username">
+  ```
+
+  - name属性后面的值，是自定义的
+  - radio或者checkbox如果是一组，我们必须给他们命名相同的名字
+
+  ```html
+  <input type="radio" name="sex" value="1"/>男
+  <input type="radio" name="sex" value="0"/>女
+  ```
+
+- 如果页面一打开就让某个单选按钮或者复选框处于选中状态，那可以用checked属性，表示默认选中状态，用于单选按钮和复选按钮
+
+  ```html
+  性 别：
+  <input type="radio" name="sex" value="1" checked="checked"/>男
+  <input type="radio" name="sex" value="0"/>女
+  ```
+
+- input表单元素展现不同的形式，比如单选或者文本。可以使用type属性，type属性可以让input表单元素设置不同的形态
+
+  ```html
+  <input type="radio" name="sex" value="1" checked="checked"/>男
+  用户名：<input type="text" value="请输入用户名" name="username">
+  ```
+
+#### 2. `<label>`标签
+
+​	`<label>`标签为input元素定义标注（标签）
+
+​	`<label>`标签用于绑定一个表单元素，当点击`<label>`标签内的文本时，浏览器就会自动将焦点（光标）转到或者选择对应的表单元素上，用来增加用户体验
+
+​	语法：
+
+```html
+<label for="sex">男</label>
+<input type="radio" name="sex" id="sex" />
+```
+
+​	核心：`<label>`标签的for属性应当与相关元素的id属性相同
+
+#### 3. `<select>`标签
+
+> 使用场景：如果由多个选项让用户选择，但想节约页面控件的时候，可以使用`<select>`标签控件定义下拉列表
+
+​	语法：
+
+```html
+<select>
+    <option>选项1</option>
+    <option>选项2</option>
+    <option>选项3</option>
+</select>
+```
+
+​	**注意**：`<select>`标签中至少包含一对option
+
+​					在option中定义selected=“selected”时，当前项即为默认选中项
+
+#### 4. `<textarea>`标签
+
+> 使用场景： 当用户输入内容较多的情况下，就不能使用文本框了，此时我们可以使用`<textarea>`标签
+
+​	在表单元素中，`<textarea>`标签是用于定义多行文本输入的控件，常见于留言板，评论
+
+​	语法：
+
+```html
+<textarea rows="3" cols="20">
+    文本内容
+</textarea>
+```
+
+​	**注意**：通过`<textarea>` 标签可以轻松的创建多行文本框
+
+​					cols=“每行的字符数”， rows=“显示的行数”
+
+​					在实际开发中，我们一般使用css来改变文本域的大小
+
+#### 5. 表单元素的总结
+
+1. 表单元素我们学习了三大组 input输入表单元素，select下拉表单元素， textarea文本域表单元素
+
+2. 这三大表单元素都应该包含在form表单域里面，并且有name属性
+
+   ```html
+   <from>
+   	<input type="text" name="username" />
+       <select name="weiwei">
+           <option>选项一</option>
+       </select>
+       <textarea name="message"></textarea>
+   </from>
+   ```
+
+3. 有三个名字很像的标签
+
+   1. 表单域 from 使用场景：提交区域内表单元素给后台服务器
+   2. 文件域 file  是input type属性值 使用场景：上传文件
+   3. 文本域 textarea 使用场景：可以输入多行文字，比如留言板，网站介绍
+
+   
