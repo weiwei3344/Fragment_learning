@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CSS复合选择器</title>
+		<style type="text/css">
+			div {
+				width: 200px;
+				line-height: 26px;
+				text-align: center;
+			}
+
+			a:link {
+				/* 所有未被访问的链接 */
+				color: palegreen;
+			}
+			
+			a:visited{
+				/* 所有已经被访问的链接 */
+				color: pink;
+			}
+			
+			a:hover{
+				/* 鼠标指针位于上面的链接 */
+				color: antiquewhite;
+			}
+			
+			a:active{
+				/* 选择活动链接 */
+				color: palevioletred;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 2.1 快速生成HTML结构语法 -->
+		<div>
+			<!-- 1. 生成标签直接输入标签名加tab -->
+			<div></div>
+			<!-- 2. 生成多个标签直接在标签名后面写数字-->
+			div*6
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<!-- 3. 父子关系直接使用> -->
+			div>ul>li*3
+			<div>
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+			<!-- 4. 兄弟关系用+ -->
+			div+p
+			<div></div>
+			<p></p>
+			<!-- 5. 生成带有类名的用.class，生成带有id的直接用#id -->
+			div.class
+			<div class="class"></div>
+			div#id
+			<div id="id"></div>
+			<!-- 6. 生成带有顺序的类名，用自增符号$ (从1开始自增)-->
+			div.count$*3
+			<div class="count1"></div>
+			<div class="count2"></div>
+			<div class="count3"></div>
+			<!-- 7. 生成的内容在内部标签显示可以使用{}-->
+			div{Hello World！}
+			<div>Hello World!</div>
+		</div>
+		<!-- 3. CSS复合选择器 -->
+		<div>
+			<!-- 3.5 伪类选择器 -->
+			<div>
+				<!-- 链接伪类选择器 -->
+				<div>
+					<a href="javascript:;">我是超链接1号</a>
+					<br>
+					<a href="javascript:;">我是超链接2号</a>
+					<br>
+					<a href="javascript:;">我是超链接3号</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
